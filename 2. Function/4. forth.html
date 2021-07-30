@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Arrow Function
+        myfun = () => {
+            document.write("HELLO !"+"<br>");
+        }
+        myfun();
+
+        myfun = (a, b) => { // With Parameter
+            document.write(a + " " +b);
+        }
+        myfun(10, 20);
+
+        // Default Parameter Of Arrow Function
+        myfun = (a, b=90) => {
+            document.write("<br>" + a + " " +b);
+        }
+        myfun(10);
+
+
+        myfun = (a, b) => {
+            document.write("<br>" + a + " " +b);
+        }
+        myfun(10);
+
+        myfun = (...args) => {
+            document.write("<br>" + args);
+        }
+        myfun(10, 42, 20, 36);
+
+        myfun = (a, ...args) => {
+            document.write("<br>" + a);
+            document.write("<br>" + args +"<br>");
+        }
+        myfun(10, 42, 20, 36);
+
+        
+        // Immediately Invoked Function Expression
+        (function(){
+            document.write("<br>"+"HELLO !")
+        })();
+
+        (function(){
+            a = 90;
+            document.write("<br>"+a);
+        })();
+
+        (function(h, j){
+            document.write("<br>"+h +" "+ j);
+        })(10, 4);
+
+        (function(h, j){
+            document.write("<br>"+typeof(h));
+            document.write("<br>"+h +" "+ j);
+            document.write("<br>"+typeof("Hello"));
+        })(10);
+
+        // Null
+        o = null;
+        document.write(o);
+        document.write("<br"+ typeof(o));
+    </script>
+</body>
+</html>

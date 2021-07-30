@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // return statement
+        function add(a, b){
+            return(a+b);
+        }
+        document.write("<br>Adding :" + add(5, 10));
+        document.write("<br>Adding :" + add(15, 10));
+        document.write("<br>Adding :" + add(25, 10));
+        document.write("<br>Adding :" + add(85, 10));
+        document.write("<br>Adding :" + add(65, 10));
+
+        document.write("<br><br>Closure :-")
+        // Closure
+        var i = 10 // Global variable
+        function show(){
+            var j = 20
+            document.write("<br> Inside Function Value:" + j)
+            document.write("<br> Outside Function Value:" + i)
+        }
+        show()
+
+        document.write("<br><br>Closure With Nested Function :-")
+        // Closure With Nested Function
+        // outer() can't access any thing of inner()
+        // inner() can access any thing from outer function and from global scope
+        function outer(){
+            var k = " Local Variable Outside Function"
+            document.write("<br>" + k)
+            function innerfun(){
+                var l = " Local Variable Inner Function"
+                document.write("<br>" + l)
+            }
+            innerfun()
+            document.write("<br>" + l) // Will Display Error As k in a variable of inner()
+        }
+        outer()
+    </script>
+</body>
+</html>
