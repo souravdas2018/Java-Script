@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        // Object created by object Literal
+        //Deleration
+        var fees = {}; // Empty Object created
+        // Initialization Of Object
+        fees['Sourav'] = 1000; // Property Of Object
+        fees['Banti'] = 4000; // Property Of Object
+        fees['Sourav Das'] = 5800; // Property Of Object
+        // Accessing Object Property using []
+        document.write("<br>"+fees['Sourav Das']);  
+        //document.write("<br>"+ fees['Das']); // Undefined As This is not defined
+        document.write("<br>"+ fees['Banti']);
+
+        // Use of Dot Operator In Object
+        var fee = {};
+        fee.Sourav = 1000;
+        fee.Banti = 4000;
+        fee.Sourav_Das = 5800;
+        document.write("<br>"+fee.Sourav_Das);
+        document.write("<br>"+ fee.Banti);  // Accessing Object Property using .
+        document.write("<br>"+ fee.Sourav);
+
+        var fees = {};
+        fee['total'] = function(){   //Method Defination
+            return (100+200);
+        };
+        document.write("<br>"+ fee['total']());
+        document.write("<br>"+fee.total());
+
+    
+        // Properties And Method In One object
+        var _fee = {    // _fee is an object which is decleared and defined at one time
+            Rahul:568,
+            Sumit:781,
+            Rohan:694,
+            'Sourav Das':875,
+            total: function(){ // "function" is an anonymous function
+                return(200+100);
+            }
+        };
+        document.write("<br>" +_fee.Rahul);
+        document.write("<br>" + _fee['Sourav Das']);
+        document.write("<br>" + _fee.total());
+        document.write("<br>" + _fee['total']());
+        document.write("<br>" + _fee.Rahul + " " + _fee.Rohan + "<br>");
+
+        // Adding Object Property In Object
+        _fee.Sonam = 600
+        document.write("<br>After Adding New Property :" +_fee.Sonam);
+
+        // Adding Object Method In Object
+        _fee._show = function(){
+            document.write("<br>" + "After Adding New Method to Object" )
+            document.write("<br>" +_fee.Rahul);
+            document.write("<br>" + _fee['Sourav Das']);
+            document.write("<br>" + _fee.total());
+            document.write("<br>" + _fee['total']());
+            document.write("<br>" + _fee.Rahul + " " + _fee.Rohan + "<br>");
+        }
+        _fee._show()
+
+        // Creating Object By Object Constructor
+
+        var fees = new Object(); // Object Constructor
+        fees.Sourav = 100;
+        fees.Das = 200;
+        fees.Banti = 300;
+        fees.total = function(){    // Method (Anonymous)
+            return(100+200+300);
+        }
+        fees.sum = function(){    // Method (Anonymous)
+            return(100+200+300);
+        }
+        document.write("<br>"+fees.Banti);
+        document.write("<br>"+ fees.total());
+        document.write("<br>"+ fees.sum());
+        fees.qwe = 300;
+        document.write("<br>"+ fees.qwe);
+        delete fees.Banti; // Deleting Property from object
+        document.write("<br>" + fees.Rahul + " " + fees.Das + "<br>");
+    </script>
+</body>
+</html>
