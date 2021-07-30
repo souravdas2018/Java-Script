@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Normal Function Declaration
+        norml_show()
+        document.write("<br>")
+        function norml_show(){
+            document.write("Normal Function 1")
+        }
+        _norml_show()
+        function _norml_show(){
+            document.write("Normal Function 2")
+        }
+
+        document.write("<br> <br>Function Expression :-")
+        //myfunc();// Function Can Be Called Only After The declaration Here
+        myfunc = function show(){// Function Expression
+            document.write("<br> HELLO");
+        }
+        myfunc();
+
+        // Anonymous Function
+        a = function(){
+            document.write("<br>Sourav");
+        }
+        a();
+
+        document.write("<br><br> Passing Anonymous Function as Argument :-")
+        // Passing Anonymous Function as Argument
+        
+        /*
+        document.write("<br>Normal Function Argument :- ")
+
+        function fgh(myfun){
+            return myfun;
+        }
+        fgh("Sourav")
+        */
+
+        document.write("<br> <br>Anonymous Function Argument :- ")
+        b = function(x, y){
+            return x+ y
+        }
+        document.write("<br>" + b(5, 5))
+
+        document.write("<br> <br> Returning Anonymous Function :-")
+        // Returning Anonymous Function
+        function disp(a){
+            return function(b){
+                return a+b
+            }
+        }
+        document.write("<br>" +disp(10)) // diplays the anonymous function
+
+        // Execussion of The Anonymous Function
+        var af = disp(10)
+        document.write("<br>"+af(20))
+    </script>
+</body>
+</html>

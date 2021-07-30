@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Function : = <br>")
+        document.write("Out Side Func() First Line <br>");
+        // Function
+        function display(){ // Function Defination
+            document.write("Sourav");
+        }
+        display();  // Function Calling
+
+        function _display(){
+            document.write(" Das");
+        }
+        _display();
+        document.write("<br> Last Line <br>");
+
+        function para(name){    // Function With A Parameter
+            document.write(name);
+        }
+        para("Sourav")
+
+        para("<br> <br> Calling Of Function With Parameter !<br>"); // Calling Of Function With Parameter
+
+        function _para(n1, n2){
+            document.write(n1," " +n2);
+            document.write("<br>" + n1);
+            document.write("<br>" + n2);
+        }
+        _para(12, 13);
+
+        function __para(n1, n2){
+            document.write("<br>" + n1);
+            document.write("<br>" + n2);
+        }
+        __para(12, "Google");
+
+        function missing_args(a, b, c){
+            document.write("<br> A: " + a + " B: " +b + " C: " +c);
+        }
+        missing_args(4, 5, 6);
+        missing_args(8, 3); // Missing Argument
+
+        document.write("<br>")
+        
+        document.write("<br> Arguments Object : =")
+        // Arguments Object
+        function disp(name1, name2){
+            //document.write("<br> No Of Arguments :" + arguments.length); //No. Arguments
+            arguments[0] = "<br>Hello";
+            // document.write(name1);
+            // document.write(name2);
+            document.write(arguments[0]);
+            document.write(arguments[1]);
+            document.write("<br>" + arguments[0] + "<br>");
+        }
+        disp("<br>Sourav ", "Das")
+        //disp("<br>Sourav ", "Das", "Banti")
+
+        function _disp(){   // Using For loop With Argument Object
+            for (i=0; i<arguments.length; i++){
+                document.write(arguments[i]+" ");
+            }
+        }
+        _disp("Banti", 1586, "Sourav")
+
+        // Too Many Function Arguments
+        document.write("<br><br> Too Many Function Arguments : =")
+        function add(a, b){
+            document.write("<br> A: " + a + " B: " +b + " C:" + arguments[2]);
+        }
+        add(4, 5, 6);
+
+        //Default Parameters
+        document.write("<br> <br> Default Parameters : =")
+        function _add(a, b, c = 50){
+            document.write("<br>A= " + a + "<br>");
+            document.write("B= " + b + "<br>");
+            document.write("C= " + c + "<br>");
+        }
+        _add(69, 75, 55);
+        _add(69, 75);
+
+        document.write("<br> Rest Parameters : =")
+        //Rest Parameters
+        // 1st Approach
+        function __add_(...args){
+            document.write("<br> O/P Of Args : " + args);
+            
+        }// args is a array
+        __add_(64, 78+"<br>");
+        __add_(44, 754, 55, 9177, 5515+"<br>");
+
+        // 2nd Approach
+        function __add(a, ...args){
+            document.write("<br>O/P Of a :" + a + "<br>")
+            document.write("<br> O/P Of Args : " + args);
+            
+        }// args is a array
+        __add(69, 75+"<br>");
+        __add(46, 75, 52, 91, 55+"<br>");
+    </script>
+</body>
+</html>
