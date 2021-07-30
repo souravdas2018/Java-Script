@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Function</title>
+</head>
+<body>
+    <script>
+        // Factory Function
+        function mobile(){
+            return{
+                model: 'Galaxy',
+                price: function(){
+                    return "Price Rs. 3000";
+                }
+            };
+        }
+        var Samsung = mobile();
+        document.write(Samsung.model + " " + Samsung.price() + "<br>");
+
+        // Factory Function With Parameter
+        function _mobile(model_no){
+            return{
+                model: model_no,
+                price: function(){
+                    return "Price Is Rs. 3000";
+                }
+            };
+        }
+        var samsung = _mobile('galaxy');
+        var nokia = _mobile('3310');
+        document.write(samsung.model+ " " + samsung.price() + "<br>");
+        document.write(nokia.model+ " " + nokia.price() + "<br>");
+    </script>
+</body>
+</html>
