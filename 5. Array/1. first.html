@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var stu = ['Rahul', 'Raj', 56]
+        document.write(stu)
+        document.write("<br>"+typeof(stu))
+        a = 10
+        b = 58
+        c = 66
+        var all = [a, b, c]
+        document.write("<br>"+all)
+        document.write("<br>"+typeof(all))
+
+        // using Array Constructor
+        var geek = new Array()
+        geek = ['Sourav', 'Raj', 56, 'Das']
+        document.write("<br>"+geek)
+        document.write("<br>"+typeof(geek))
+
+        // var geek = new Array(5) ==> This Will Create an Empty array with Length 5
+        // So This Approach Is Avoided In JS 
+
+        var _geek = new Array('Banti', 'Raj', 56, 'Das')
+        document.write("<br>"+_geek)
+        document.write("<br>"+typeof(_geek))
+
+        document.write("<br>"+_geek[2])
+        document.write("<br>"+_geek['1'])
+        document.write("<br>"+_geek[4]) // Undefined As No Element Is There
+
+        // Modifing Array Element
+        _geek[2] = 'Sourav'
+        document.write("<br>"+_geek[2])
+        document.write("<br>"+_geek)
+
+        // Removing Array Element
+        document.write("<br>"+_geek)
+        document.write("<br>"+delete _geek[0])
+        document.write("<br>"+_geek) // Array Size Remains Unchanged
+        document.write("<br>"+_geek[0]) // After Deleting The Value Becomes Undefined
+
+        // Length 
+        document.write("<br>"+_geek.length)
+
+        // Iteration of Array using for Loop
+        var _stu = ['Rahul', 'Raj', 56, 'Sourav', 'Banti', 45, 'Das']
+        //var _stu = new Array('Rahul', 'Raj', 56, 'Sourav', 'Banti', 45, 'Das')
+        document.write("<br>"+_stu)
+        document.write("<br>Iteration of Array using for Loop:")
+        for(var i = 0; i < _stu.length; i++){
+            document.write("<br>"+ _stu[i])
+        }
+
+        // Iteration of Array using forEach Loop
+        document.write("<br>Iteration of Array using forEach Loop:")
+        _stu.forEach(function(name){
+            document.write("<br>" + name)
+        })
+
+        // Iteration of Array using for of Loop
+        document.write("<br>Iteration of Array using for of Loop:")
+        for (let value of _stu){
+            document.write("<br>" + value)
+        }
+
+        // User Input
+        // document.write("<br>User Input:")
+        // var elm = prompt("Enter No. Of Elements : ")
+        // var arr = []
+        // for (let i = 0; i <= elm; i++){
+        //     arr[i] = prompt("Enter Element :")
+        // }
+        // for (let i = 0; i <= elm; i++){
+        //     document.write("<br>"+arr[i])
+        // }
+
+        // Concate Method
+        var _stu1 = ['Rahul', 'Raj', 56]
+        var _stu2 = ['Sourav', 'Raj', 56, 'Das']
+        var _stu3 = ['Banti', 'Raj', 56, 'Das']
+        var conarr = _stu1.concat(_stu2, _stu3)
+        document.write("<br>Concating : "+conarr)
+
+        // Join Method
+        var newarr = _stu2.join(" / ")
+        //var newarr = _stu2.join(" and ")
+        //var newarr = _stu2.join(" or ")
+        //var newarr = _stu2.join("  ")
+        document.write("<br>Normal : " + _stu2) // By Default ","
+        document.write("<br>Join : " + newarr)
+        document.write("<br>TypeOf : " + typeof(newarr))
+
+        // Reverse Method
+        document.write("<br>Normal Array: " + _stu2)
+        _stu2.reverse();
+        document.write("<br>Reversed Array: " + _stu2)
+        document.write("<br>TypeOf : " + typeof(_stu2))
+
+        // Slice Method
+        document.write("<br>Normal Array: " + _stu2)
+        var slice_arr = _stu2.slice(1, 3)
+        document.write("<br>Sliced Array: " + slice_arr)
+        var slice_arr_neg = _stu2.slice(-3, -1)
+        document.write("<br>Sliced Array(with Negative Sign) : " + slice_arr_neg)
+
+        // ArrayisArray Method
+        var res = Array.isArray(_stu1)
+        document.write("<br>"+res)
+        var _res = ("I Am String")
+        var res_type = Array.isArray(res_type)
+        document.write("<br>"+res_type)
+
+        // Splice Method
+        var new_stu = ['Sourav', 'Raj', 56,'Banti', 86, 'Das']
+        document.write("<br>Normal: "+new_stu)
+        new_stu.splice(2, 0, "End")
+        document.write("<br>Splice: "+new_stu)
+
+        //indexOf Method
+        document.write("<br>Normal: "+new_stu)
+        document.write("<br>indexOf: "+new_stu.indexOf('Banti'))
+        document.write("<br>indexOf: "+new_stu.indexOf(56, 1))
+
+        // fill Method
+        var _new_stu = ['Sourav', 'Raj', 56,'Banti', 86, 'Das']
+        document.write("<br>Normal: "+_new_stu)
+        document.write("<br>fill: "+_new_stu.fill('Code', 1, 3))
+        document.write("<br>Normal: "+_new_stu)
+
+        var new_arr = new Array(3).fill("Sourav")
+        document.write("<br>"+ new_arr)
+
+        // unshift Method ==> Add Value At the starting
+        document.write("<br>Normal: "+new_stu)
+        document.write("<br>Normal: "+new_stu.length)
+        new_stu.unshift("Google");
+        document.write("<br>unshift: "+new_stu)
+        new_stu.unshift("Yahoo", "Hello", 62);
+        document.write("<br>unshift: "+new_stu)
+        document.write("<br>unshift: "+new_stu.length)
+
+        // push Method ==> Add value At the End
+        document.write("<br>Normal: "+new_stu)
+        new_stu.push("geeksForGeeks");
+        document.write("<br>Push: "+new_stu)
+        new_stu.push("World", "Map", 78);
+        document.write("<br>Push: "+new_stu)
+
+        // shift Method ==> Removes 1st Element from The Array
+        document.write("<br>Normal: "+new_stu)
+        document.write("<br>shift: "+new_stu.shift())
+        document.write("<br>Normal: "+new_stu)
+
+         // pop Method ==> Removes last Element from The Array
+         document.write("<br>Normal: "+new_stu)
+        document.write("<br>Pop: "+new_stu.pop())
+        document.write("<br>Normal: "+new_stu)
+    </script>
+</body>
+</html>

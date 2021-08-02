@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor As A Class</title>
+</head>
+<body>
+    <script>
+        
+        var Mobile = function(module_no, price){
+            this.model = module_no;
+            this.colour = 'white';
+            this.price = 3000;
+            this.sp = price;
+            this.sellingprice = function () {
+                return(this.price + this.sp)
+            };
+            this.data = function() {
+                document.write("Model No.:" + this.model + "Price : " + this.sellingprice());
+            }   
+        };
+        var samsung = new Mobile('Galaxy', 2000);
+        var nokia = new Mobile('3310', 1000);
+        nokia.data();
+        samsung.data();
+
+        document.write("<br>");
+
+        // Private property & method
+
+        var _Mobile = function(module_no, price){
+            this.model = module_no;
+            var colour = 'white'; // Private property
+            this.price = 3000;
+            this.sp = price;
+            var sellingprice = function () { // Private method
+                return(this.price + this.sp)
+            };
+            this.data = function() {
+                document.write("Model No.:" + this.model + "Price : " + this.sellingprice());
+            } 
+            document.write("<br>"+nokia.colour); // We can access the 
+                                                 //  private property inside the class
+
+            document.write("<br>"+nokia.sellingprice()); // We can access the 
+                                                        //  private method inside the class                                     
+        };
+        var samsung = new _Mobile('Galaxy', 2000);
+        var nokia = new _Mobile('3310', 1000);
+        document.write("<br>"+nokia.price);
+        document.write("<br>"+nokia.colour); // Cannot access as it is a Private Property
+        document.write("<br>"+nokia.sellingprice()); // Cannot access as it is a Private Method
+
+        document.write("<br>");
+
+        // Accessing Private Property and Method Outside the class
+
+        var __Mobile = function(module_no, price){
+            this.model = module_no;
+            this.colour = 'white';
+            var price = 3000; // Private property
+            this.sp = price;
+            this.sellingprice = function() { // Accessing Private Property(Read Only)
+                return(price)
+            };  
+        };
+        var samsung = new __Mobile('Galaxy', 2000);
+        var nokia = new __Mobile('3310', 1000);
+        document.write("<br>Accessing Private Method :"+nokia.sellingprice());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class(ES6)</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            constructor(){
+                // Instance Member
+                this.a = 12
+                this.show = function(){
+                    return "INSTANCE METHOD ! "
+                }
+            }
+            // Prototype Member
+            display(){
+                return "PROTOTYPE METHOD ! <br>"
+            }
+        }
+        var nokia = new Mobile();
+        document.write(nokia.a)
+        document.write("<br>"+nokia.show())
+        document.write("<br>"+nokia.display())
+
+        document.write("<br>")
+
+        // Inheritance
+        class Father{
+            showFMoney(){
+                return "Father Money <br>"
+            }
+        }
+        class Son extends Father{
+            showSMoney(){
+                return "Son Money <br>"
+            }
+        }
+        var s = new Son();
+        document.write(s.showFMoney());
+        document.write(s.showSMoney())
+
+        document.write("<br>")
+        
+        // Super Method
+        class _Father{
+            constructor(money){
+                this.Fmoney = money
+            }
+            showFMoney(){
+                return this.Fmoney + "Father Money <br>"
+            }
+        }
+        class _Son extends _Father{
+            constructor(money){ // Super Class : Must call super constructor in derived 
+                                //class before accessing 'this' or returning from 
+                                //derived constructor
+                super(money);
+            }
+            showSMoney(){
+                return "Son Money <br>"
+            }
+        }
+        var s = new _Son(10000);
+        document.write(s.showFMoney());
+        document.write(s.showSMoney())
+    </script>
+</body>
+</html>

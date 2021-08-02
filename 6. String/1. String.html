@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Hello World"
+        document.write("<br>" + str)
+        document.write("<br>" + typeof(str))
+
+        var _str = new String("Hello World");
+        document.write("<br>" + _str)
+        document.write("<br>" + typeof(_str))
+
+        var _str_ = new String('Hello "Sourav"World');
+        document.write("<br>" + _str_)
+
+        // Concate
+        var strng = "Hello".concat("Something", "JS")
+        document.write("<br>" + strng)
+        var str1 = "Hello"
+        var str2 = "World"
+        var str3 = "Sourav"
+        var newstr = str1.concat(str2, str3, "Das")
+        document.write("<br>" + newstr)
+
+        document.write("<br>")
+
+        // Length Method
+        document.write("<br> Length :" + str.length)
+
+        //charAt Method
+        document.write("<br> charAt :" + str.charAt(6))
+
+        // charCodeAt Method ==> Unique Code of the character at secified index
+        document.write("<br> charCodeAt :" + str.charCodeAt(2))
+
+        // toUpperCase and toLowerCase Method
+        document.write("<br>Actual : " + str)
+        document.write("<br>toUpperCase :" + str.toUpperCase())
+        document.write("<br>toUpperCase :" + str.toLowerCase())
+
+        // trim Method ==> removes white space from both sides of the string
+        var _str_ = "         Hello World        "
+        console.log(_str_)
+        console.log(_str_.trim())
+
+        // replace Method ==> Old With New
+        document.write("<br>Actual : " + str)
+        document.write("<br>replace :" + str.replace("World", "Sourav"))
+
+        // split Method 
+        var spl = "I Love To Code"
+        document.write("<br>Actual : " + spl)
+        document.write("<br>" + spl.split(" "))
+        console.log(spl.split(" "))
+
+        var _spl = "This Is Geeky Shows"
+        document.write("<br>Actual : " + _spl)
+        var arr = _spl.split(" ")
+        document.write("<br>" + arr)
+        document.write("<br>" + arr[2])
+
+        // indexOf Method 
+        document.write("<br>indexOf : " + _spl.indexOf("i"))
+        document.write("<br>indexOf : " + _spl.indexOf("e", 5)) // Starts From The 5th index
+
+        // search Method
+        document.write("<br>search : " + _spl.search("i"))
+        document.write("<br>search : " + _spl.search("Geeky"))
+        document.write("<br>search : " + _spl.search("ky"))
+
+        //slice Method
+        document.write("<br>slice : " + _spl.slice(2, 9))
+
+        // substring Method 
+        document.write("<br>substring : " + _spl.substring(2, 9))
+
+        // substr Method
+        // In Parameters the 2nd number not index no. It is the number of characters
+        document.write("<br>substr : " + _spl.substr(2, 9))
+
+        document.write("<br>")
+
+        // Template Literal Or Template String
+        // Multiple Lines
+        var temlit = `Hello World 
+                        Sourav Kumar Das`
+        document.write("<br>" + temlit)
+        console.log(temlit)
+
+
+        // String Interpolation
+        var str1 = 'Hello'
+        document.write("<br>" + `${str1} World`)
+        document.write("<br>" + `${5+4} World ${str1}`)
+        a = 5
+        b = 5
+        document.write("<br>" + `${5+4} ${a + b} World ${str1}`)
+        function myfan(say){
+            return say
+        }
+        document.write("<br>" + `${myfan("Hello")} World`)
+        name = "Sourav"
+        document.write("<br>" +`Your Name Is : ${name}`)
+    </script>
+</body>
+</html>

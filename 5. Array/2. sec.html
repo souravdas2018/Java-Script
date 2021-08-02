@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var stu = [
+            ['Rahul', 'Raj', 56], 
+            ['Banti', 'Raj', 56, 'Das'], 
+            ['Sourav', 'Raj', 56, 'Das']
+        ]
+        // var stu = new Array(
+        //     ['Rahul', 'Raj', 56], 
+        //     ['Banti', 'Raj', 56, 'Das'], 
+        //     ['Sourav', 'Raj', 56, 'Das']
+        // );
+        // All Arrays
+        for (let i = 0; i<stu.length; i++){
+            document.write("<br>" + stu[i])
+        }
+
+        // All Elements
+        for (let i = 0; i<stu.length; i++){
+            for (let j = 0; j<stu.length; j++)
+                document.write("<br>" + stu[i][j])
+        }
+
+        document.write("<br>")
+
+        /*
+
+        // Unique O/P
+
+        document.write("<br>Unique O/P <br>")
+
+        for (let i = 0; i<stu.length; i++){
+            for (let j = 0; j<stu.length; j++){
+                document.write(i + " " + j + " |")
+            }
+            document.write("<br>")
+        }
+        */
+
+        /*
+
+        // Empty 2D Array
+
+        var emp2D = [[], [], []]
+        // var emp2D = new Array([], [], []);
+
+        // All Elements
+        for (let i = 0; i<emp2D.length; i++){
+            for (let j = 0; j<emp2D.length; j++)
+            document.write("<br>" + emp2D[i][j])
+        }
+        */
+    </script>
+</body>
+</html>
