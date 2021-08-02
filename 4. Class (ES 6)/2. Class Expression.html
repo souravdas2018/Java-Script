@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Expression</title>
+</head>
+<body>
+    <script>
+        // 1. Unnamed
+        var Mobile = class {
+            constructor(model_no, colour){
+                this.model = model_no
+                this.clr = colour
+            }
+            show(){
+                return this.model + "Price s. 3000" + this.clr
+            }
+        }
+        var nokia = new Mobile('Galaxy', 'White')
+        var lg = new Mobile('Note 4', 'Black')
+        document.write(nokia.show()+ "<br>")
+        document.write(lg.show())
+
+        // 2. Named
+        class _Mobile{
+            constructor(model_no, colour){
+                this.model = model_no
+                this.clr = colour
+            }
+            show(){
+                return this.model + "Price s. 3000" + this.clr
+            }
+        }
+        var nokia = new _Mobile('Galaxy', 'White')
+        var lg = new _Mobile('Note 4', 'Black')
+        document.write("<br>"+nokia.show()+ "<br>")
+        document.write(lg.show())
+    </script>
+</body>
+</html>

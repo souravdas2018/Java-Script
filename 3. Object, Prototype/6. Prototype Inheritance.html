@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Super Class
+        var Mobile = function(){
+            this.a = 10
+        }
+
+        Mobile.prototype.z = 30
+
+        // Sub Class
+        var Sansung = function(){
+            Mobile.call(this)
+            this.b = 20
+        }
+        // Prototype Inheritence (To Access z)
+        Sansung.prototype = Object.create(Mobile.prototype)
+        Sansung.prototype.constructor = Sansung
+
+        var s = new Sansung()
+        document.write(s.a + "<br>")
+        document.write(s.b+ "<br>")
+
+        document.write(s.z+ "<br>")
+
+        var m  = new Mobile()
+        Sansung.prototype.z = 51
+        document.write(s.z+ "<br>")
+    </script>
+</body>
+</html>

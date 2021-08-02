@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Function</title>
+</head>
+<body>
+    <script>
+        function Mobile(){  // Constructor
+            this.model = '3310'; // variables in Constructor
+            this.price = function(){ // method in constructor (anonymous function)
+                document.write(this.model + " Price Rs. 3000/-<br>");
+            }
+        }
+        var samsung = new Mobile(); // new object creation
+        var lg = new Mobile();  // new object creation
+        samsung.price();    // Accessing property using object
+        lg.price();
+
+        // Constructor with parameter
+        function _Mobile(model_no){  
+            this.model = model_no;
+            this.memory = 4;
+            this.price = function(){
+                document.write(this.model + " Price Rs. 3300/-<br>");
+            }
+        }
+        var samsung = new _Mobile('Galaxy'); // new object creation
+        var lg = new _Mobile('3310');  // new object creation
+        samsung.price();    // Accessing property using object
+        lg.price();
+
+        // Check Properties exists
+        // Process 1
+        if(typeof lg.memory != 'undefined'){
+            document.write("<br> Available");
+        }else{
+            document.write("<br> Don't Exist")
+        }
+        if(typeof lg.battery != 'undefined'){
+            document.write("<br> Available");
+        }else{
+            document.write("<br> Don't Exist")
+        }
+
+        // Check Properties exists
+        // Process 2 using "in" operator
+        if('memory' in lg){
+            document.write("<br> Available");
+        }else{
+            document.write("<br> Don't Exist")
+        }
+        if('battery' in lg){
+            document.write("<br> Available");
+        }else{
+            document.write("<br> Don't Exist")
+        }
+
+        // for in Loop to displaying all properties
+        document.write("<br><br>for in Loop to displaying all properties");
+        for(var spec in lg){
+            document.write("<br>");
+            document.write(lg[spec]);
+        }
+
+        document.write("<br>");
+        // For in Loop to displaying all properties without displaying Method
+        for(var spec in lg){
+            if(typeof lg[spec] !== 'function'){ // Function will Not be displayed
+                document.write("<br>Function will Not be displayed : ");
+                document.write(lg[spec]);
+            }
+        }
+
+        // Displaying All Keys
+        document.write("<br><br>Displaying All Keys");
+        document.write("<br>" +Object.keys(lg));
+
+
+
+        document.write("<br><br>");
+        var _Mobile = function(model_no) { 
+            // instance member
+            this.model = model_no;
+            this.price = '3000';
+        }
+        var samsung = new _Mobile('Galaxy');
+        var nokia = new _Mobile('3310')
+
+        samsung.colour = 'white'
+        document.write(samsung.colour)
+        document.write("<br>"+nokia.colour); // The colour property is not 
+                                             // accessed by nokia
+
+        nokia._colour = 'black' 
+        document.write("<br>"+nokia._colour); // This _colour property is 
+                                             // accessed by nokia 
+    </script>
+</body>
+</html>
