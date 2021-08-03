@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Number Literals
+        var a = 10
+        var b = 10.45
+        var c = 5e3
+        var d = 34e-5
+        // Number Object
+        var x = new Number(100)
+        document.write(a)
+        document.write("<br>"+b)
+        document.write("<br>"+c)
+        document.write("<br>"+d)
+
+        document.write("<br><br>"+x)
+
+        document.write("<br><br>"+typeof(a))
+        document.write("<br>"+typeof(x))
+
+        var y = "200"
+        document.write("<br><br>" + y)
+        document.write("<br>" + typeof(y))
+
+        // Number with String
+        document.write("<br>")
+
+        var o = "50"
+        var p = 10
+        var l = 20
+        var t = "Hello"
+        document.write("<br>" + (o+p))
+        document.write("<br>" + (o-p))
+        document.write("<br>" + (p+l+o))   
+        document.write("<br>" + (o+p+l))   
+        document.write("<br>Result :" + p+l)  
+        
+        document.write("<br><br>" + (p+l))
+        document.write("<br>" + (o+p))
+        document.write("<br>" + (p+o))   
+        document.write("<br>" + (p+t))   
+        document.write("<br>Result :" + p+t) 
+
+        document.write("<br><br>" + (l-p))
+        document.write("<br>" + (o-p))
+        document.write("<br>" + (p-o))   
+        document.write("<br>" + (p-t))   
+        document.write("<br>Result :" + p-t) 
+
+        // NaN
+        document.write("<br>")
+        document.write(p/t)
+
+        // NaN is not equal to Anything 
+        document.write("<br>")
+        document.write("<br>"+isNaN(o))
+        document.write("<br>"+isNaN(t))
+
+        // toString Method
+        document.write("<br><br>"+typeof(a))
+        document.write("<br>"+a.toString())
+        document.write("<br>"+typeof(a.toString()))
+
+        // toExponential Method
+        var a2 = 58975.98745
+        document.write("<br><br>"+a2.toExponential())
+        document.write("<br>"+a2.toExponential(2))
+        document.write("<br>"+a2.toExponential(4))
+
+        // toFixed Method
+        var a3 = 19.65823
+        document.write("<br><br>"+a3.toFixed())
+        document.write("<br>"+a3.toFixed(2))
+        document.write("<br>"+a3.toFixed(4))
+        document.write("<br>"+a3.toFixed(8))
+
+        // toPrecision Method 
+        document.write("<br><br>"+a3.toPrecision())
+        document.write("<br>"+a3.toPrecision(2))
+        document.write("<br>"+a3.toPrecision(4))
+        document.write("<br>"+a3.toPrecision(8))
+
+    </script>
+</body>
+</html>
