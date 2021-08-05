@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Element Access Method (querySelector)
+    </title>
+</head>
+<body>
+    <h1 >We Are Learning JS Advance</h1>
+    <h2 class="geek myclass">Subscribe Geekyshows</h2>
+    <h2>Now</h2>
+    <p id="geek" class="geek">Hello<span>Geekyshows</span>
+        <em>World</em><span>Youtube</span>
+    </p>
+    <p id="find"><span class="myclass">Bye</span>GEEKYSHOWS</p>
+    <div id="display">
+        <p>1st p inside div</p>
+        <p class="geek">2nd p<span class="myspan">inside</span>
+        <em>div</em></p>
+        <p class="geek">2nd p inside div</p>
+        <span class="myspan">Hello Span</span>
+    </div>
+    <p id="show1">I am Para</p>
+    <p id="show2" class="myspan">I am Something Div</p>
+    <script>
+        document.write("querySelectorAll Method := <br>")
+        // querySelectorAll Method
+        // Element Selector
+        var result01 = document.querySelectorAll("p")
+        document.write(result01)
+        console.log(result01)
+
+        var result02 = document.querySelectorAll("p h1, #show2")
+        document.write("<br>"+result02)
+        console.log(result02)
+
+        // Id Selector
+        var result03 = document.querySelectorAll("#show1")
+        document.write("<br>"+result03)
+        console.log(result03)
+
+        var result04 = document.querySelectorAll("#show1, #display")
+        document.write("<br>"+result04)
+        console.log(result04)
+
+        // Class Selector
+        var result05 = document.querySelectorAll(".geek")
+        document.write("<br>"+result05)
+        console.log(result05)
+
+        var result06 = document.querySelectorAll(".geek , .myclass")
+        document.write("<br>"+result06)
+        console.log(result06)
+
+        // Attribute Seclector
+        var result06 = document.querySelectorAll("div[id]")
+        document.write("<br>"+result06)
+        console.log(result06)
+
+        document.write("<br><br>querySelectorAll More Specific Method :=")
+        // querySelectorAll More Specific Method
+        var data = document.getElementById("display")
+        var result07 = data.querySelectorAll("span.myspan")
+        document.write("<br>" + result07)
+        console.log(result07)
+
+        
+        // var data = document.getElementById("display").querySelectorAll("span.myspan")
+        // document.write("<br>" + data)
+        // console.log(data)
+        
+        // var result08 = document.querySelectorAll("#display > .geek >span.myspan")
+        // document.write("<br>"+result08)
+        // console.log(result08)
+
+        document.write("<br><br>querySelectorAll Method with Length Property := <br>")
+        // querySelectorAll Method with Length Property
+        var len = document.querySelectorAll(".geek").length
+        document.write("Length :-" + len)
+        console.log(len)
+
+        var list = document.querySelectorAll(".geek")
+        var l = list.length
+        document.write("<br>" + list)
+        document.write("<br>" + l)
+        console.log(list)
+
+        document.write("<br><br>querySelectorAll Method with Loop :=")
+        // querySelectorAll Method with Loop
+        for(let i = 0; i < l; i++){
+            var r = document.querySelectorAll(".geek")
+            document.write("<br>" + r)
+            console.log(r)
+        }
+        document.write("<br>")
+    </script>
+</body>
+</html>

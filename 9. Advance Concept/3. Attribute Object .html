@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Object</title>
+</head>
+<body>
+    <h1 id="myid" class="myclass">We Are Learing Js <!-- This is Comment--> </h1>
+    <p id="myid1">I am Paragraph</p>
+    <script>
+        // Attribute Properties ==> name, value
+        var result = document.getElementById("myid")
+
+        
+        document.write(result.attributes[1].nodeName + " = ")
+        document.write(result.attributes[1].nodeValue)
+
+        document.write("<br>" + result.attributes[0].nodeName)
+
+        document.write("<br>" + result.attributes[0].nodeName + " = ")
+        document.write(result.attributes[0].nodeValue)
+
+        document.write("<br>" + result.attributes.length + "<br>")
+
+        for(let i = 0; i < result.attributes.length; i++){
+            document.write(result.attributes[i].nodeName + " = ")
+            document.write(result.attributes[i].nodeValue + "<br>")
+        }
+        
+        
+        document.write(result.attributes[0].name + " = ")
+        document.write(result.attributes[0].value + "<br>")
+
+        document.write(result.attributes[1].name + " = ")
+        document.write(result.attributes[1].value)
+
+        document.write("<br>" + result.attributes.length + "<br>")
+
+        for(let i = 0; i < result.attributes.length; i++){
+            document.write(result.attributes[i].name + " = ")
+            document.write(result.attributes[i].value + "<br>")
+        }
+    </script>
+</body>
+</html>
