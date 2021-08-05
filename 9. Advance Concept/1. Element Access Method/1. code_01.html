@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title class ="geek">
+        Element Access Method (getElementById, getElementsByClassName)
+    </title>
+</head>
+<body>
+    <h1 id="show">We Are Learning JS Advance</h1>
+    <h2 class="geek myclass">Subscribe Geekyshows</h2>
+    <h2>Now</h2>
+    <p id="geek" class="geek">Hello
+        <span>Geekyshows</span>
+        <em>World</em>
+        <span>Youtube</span>
+    </p>
+    <p id="find"><span class="myclass">Bye</span>GEEKYSHOWS</p>
+    <div id="display">
+        <p class="geek">1st p inside div</p>
+        <p class="geek">2nd p inside div</p>
+    </div>
+    <p id="geeky">Hello Geekyshows</p>
+    <p id="finds">Bye Geekyshows</p>
+
+    <script>
+        document.write("getElementById METHOD := <br><br>")
+        // getElementById Method
+        document.write("All About geeky := <br>")
+        var result = document.getElementById("geek")
+        document.write("Type Of Document : <br>" + result)
+        console.log(result)
+
+        document.write("<br><br>All About show := ")
+        var _result = document.getElementById("show")
+        document.write("<br>Type Of Document : <br>" + _result)
+        console.log(_result)
+
+        document.write("<br><br>getElementByTagName Method :=")
+        //getElementByTagName Method
+
+        // Specific Tag in a document
+        var result_ = document.getElementsByTagName("p")    // Returns a list
+        document.write("<br>" + result_)
+        console.log(result_)
+
+        // All Tags in a document
+        var result__ = document.getElementsByTagName("*")
+        document.write("<br>" + result__)
+        console.log(result__)
+
+        // All Tags inside the body
+        var result___ = document.body.getElementsByTagName("*")
+        document.write("<br>Only Inside Body :- " + result___)
+        console.log(result___)
+
+        document.write("<br><br>getElementByTagName Method More Specific :=")
+        // getElementByTagName Method More Specific
+        var getSpan = document.getElementById("geek")
+        var res = getSpan.getElementsByTagName("span")
+        document.write("<br>" + res)
+        console.log(res)
+        
+        var res_span = document.getElementById("geek").getElementsByTagName("span")
+        document.write("<br>" + res_span)
+        console.log(res_span)
+
+        var res_all_tag = document.getElementById("geek").getElementsByTagName("*")
+        document.write("<br>" + res_all_tag)
+        console.log(res_all_tag)
+
+        var res_out_span = document.getElementsByTagName("span")
+        document.write("<br>" + res_out_span)
+        console.log(res_out_span)
+
+        document.write("<br><br>getElementByTagName Method with Length Property :=")
+        // getElementByTagName Method with Length Property 
+        // Process 01
+        var res_ln = document.getElementsByTagName("span").length
+        document.write("<br> Length :" + res_ln)
+        console.log(res_ln)
+        // Process 02
+        var len = result_.length
+        document.write("<br>Length :" + len)
+        console.log(len)
+
+        document.write("<br><br>getElementsByTagName Method with Loop :=")
+        // getElementsByTagName Method with Loop
+        for (var i = 0; i < res_ln; i++){
+            var loop = document.getElementsByTagName("span")[i]
+            document.write("<br>" + loop)
+            console.log(loop)
+        }
+        document.write("<br>")
+
+        document.write("<br><br>getElementsByClassName Method :=")
+        // getElementsByClassName Method
+        // All
+        var resl2 = document.getElementsByClassName("geek")
+        document.write("<br>" + resl2)
+        console.log(resl2)
+
+        // Inside Body
+        var resl2_ = document.body.getElementsByClassName("geek")
+        document.write("<br>" + resl2_)
+        console.log(resl2_)
+
+        var _resl2 = document.getElementsByClassName("geek myclass")
+        document.write("<br>" + _resl2)
+        console.log(_resl2)
+
+        document.write("<br><br>getElementsByClassName More Specific Method :=")
+        // getElementsByClassName More Specific Method
+        var getShow = document.getElementById("display")
+        var rs = getShow.getElementsByClassName("geek")
+        document.write("<br>" + rs)
+        console.log(rs)
+
+        var rs = document.getElementById("display").getElementsByClassName("geek")
+        document.write("<br>" + rs)
+        console.log(rs)
+
+        document.write("<br><br>getElementsByClassName Method with Length Property :=")
+        // getElementsByClassName Method with Length Property
+        var getShowln = document.getElementsByClassName("geek").length
+        document.write("<br>Length : " + getShowln)
+        console.log(getShowln)
+
+        var da = document.getElementsByClassName("geek")
+        var l = da.length
+        document.write("<br>Length :"+ l)
+        document.write("<br>"+ da + "<br>")
+        console.log(l)
+
+        document.write("<br><br>getElementsByClassName Method with Loop :=")
+        // getElementsByClassName Method with Loop
+        for (var i = 0; i < l; i++){
+            var loop_ = document.getElementsByClassName("geek")[i]
+            document.write("<br>" + loop_)
+            console.log(loop_)
+        }
+        document.write("<br>")
+    </script> 
+</body>
+</html>
